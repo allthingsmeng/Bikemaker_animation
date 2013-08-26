@@ -12,7 +12,9 @@ background-color: @bg-color;
 font-family: Arial, "MS Trebuchet", sans-serif;
 font-size: 100%;
 }
-
+.clear {
+    clear:both;
+}
 h2 {
     em {
         display: block;
@@ -24,6 +26,7 @@ div {
     text-align: center;
     
     &.title {
+        display: none;
         .meng-logo {
             height:30px;
             width:30px;
@@ -34,44 +37,80 @@ div {
     }
     
     &.bedroom {
+        display: none;
         background-color: @bedrm-color;
         padding-top: 20px;
         color: white;
-            img {
-                &.mike-gif {
-                    max-width: 100px;
-                    margin: 30px 0;
-                }
-            }
-            .mike-ani {
-                height: 147px;
-                width: 100px;
-                background: transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;
-                background-size: cover;
-                
-/*                -webkit-animation: sleep 2s steps(2) infinite;*/
-                
-                -webkit-animation-name: sleep;
-                -webkit-animation-duration: 1s;
-                -webkit-animation-timing-function: steps(2, end );
-                -webkit-animation-iteration-count: infinite;
-                -webkit-animation-direction: alternate;
-            }
-            
-            @-webkit-keyframes sleep {
-              0% { 
-                   background-position:0 0px;
-                    }
-               100% { 
-                   background-position:0 -294px;
-                    }
-            }
-            
     }
     
     &.city {
-        height: 200px;
-        background-color: @city-color;
-        padding: 20px;
+        height:300px;
+        position: relative;
+        overflow: hidden;
+        background-color: @city-color; 
     }
+}
+
+.mike-ani {
+    height: 147px;
+    width: 100px;
+    background: transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;
+    background-size: cover;
+    margin: auto;
+    -webkit-animation-name: sleep;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: steps(2, end );
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+.mike-walk {
+    height: 243px;
+    width: 160px;
+    background: transparent url('../img/mikewalk.png') no-repeat 0 0;
+    background-size: cover;
+    position: absolute; 
+    bottom:0;
+    left:-160px;
+    z-index:100;
+/*    -webkit-animation-name: step;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: steps(4);
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;*/
+    -webkit-animation:
+        step 1s steps(4) infinite, 
+        walk 15s linear infinite;
+        
+        &.two {
+            z-index:0;
+            -webkit-animation:
+                step 1s steps(4) infinite, 
+                walk 7s linear infinite;
+            -webkit-animation-delay:3s;
+            &:hover {
+                -webkit-animation-play-state: paused;
+            }
+        }
+}
+
+@-webkit-keyframes step {
+    0% { 
+        background-position:0 0; 
+        }
+    100% { 
+        background-position:0 -972px; 
+        }
+}
+@-webkit-keyframes walk {
+    0% { left:-160px;}
+    100% { left:105%; }
+}
+@-webkit-keyframes sleep {
+  0% { 
+       background-position:0 0px;
+        }
+   100% { 
+       background-position:0 -294px;
+        }
 }
