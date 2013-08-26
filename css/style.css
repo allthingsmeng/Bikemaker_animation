@@ -1,2 +1,103 @@
-*{margin:0;padding:0}body{background-color:#abcdef;font-family:Arial,"MS Trebuchet",sans-serif;font-size:100%}.clear{clear:both}h2 em{display:block;font-style:normal}div{text-align:center}div.title{display:none}div.title .meng-logo{height:30px;width:30px;background-color:#fff;margin:10px auto 0 auto}div.bedroom{display:none;background-color:#123456;padding-top:20px;color:#fff}div.city{height:300px;position:relative;overflow:hidden;background-color:#adadaa}.mike-ani{height:147px;width:100px;background:transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;background-size:cover;margin:auto;-webkit-animation-name:sleep;-webkit-animation-duration:1s;-webkit-animation-timing-function:steps(2,end);-webkit-animation-iteration-count:infinite;-webkit-animation-direction:alternate}.mike-walk{height:243px;width:160px;background:transparent url('../img/mikewalk.png') no-repeat 0 0;background-size:cover;position:absolute;bottom:0;left:-160px;z-index:100;-webkit-animation:step 1s steps(4) infinite,walk 15s linear infinite}.mike-walk.two{z-index:0;-webkit-animation:step 1s steps(4) infinite,walk 7s linear infinite;-webkit-animation-delay:3s}.mike-walk.two:hover{-webkit-animation-play-state:paused}@-webkit-keyframes step{0%{ background-position:0 0}100%{background-position:0 -972px}}@-webkit-keyframes walk{0%{ left:-160px}100%{left:105%}}@-webkit-keyframes sleep{0%{ background-position:0 0}100%{background-position:0 -294px}}
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #abcdef;
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  font-size: 100%;
+}
+.clear {
+  clear: both;
+}
+h2 em {
+  display: block;
+  font-style: normal;
+}
+div {
+  text-align: center;
+}
+div.title {
+  display: none;
+}
+div.title .meng-logo {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  margin: 10px auto 0 auto;
+  /*          margin:top right bottom left;*/
+
+}
+div.bedroom {
+  display: none;
+  background-color: #123456;
+  padding-top: 20px;
+  color: white;
+}
+div.city {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  background-color: #adadaa;
+}
+.mike-ani {
+  height: 147px;
+  width: 100px;
+  background: transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;
+  background-size: cover;
+  margin: auto;
+  -webkit-animation-name: sleep;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: steps(2, end);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+.mike-walk {
+  height: 243px;
+  width: 160px;
+  background: transparent url('../img/mikewalk.png') no-repeat 0 0;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: -160px;
+  z-index: 100;
+  /*    -webkit-animation-name: step;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: steps(4);
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;*/
+
+  -webkit-animation: step 1s steps(4) infinite, walk 15s linear infinite;
+}
+.mike-walk.two {
+  z-index: 0;
+  -webkit-animation: step 1s steps(4) infinite, walk 7s linear infinite;
+  -webkit-animation-delay: 3s;
+}
+.mike-walk.two:hover {
+  -webkit-animation-play-state: paused;
+}
+@-webkit-keyframes step {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -972px;
+  }
+}
+@-webkit-keyframes walk {
+  0% {
+    left: -160px;
+  }
+  100% {
+    left: 105%;
+  }
+}
+@-webkit-keyframes sleep {
+  0% {
+    background-position: 0 0px;
+  }
+  100% {
+    background-position: 0 -294px;
+  }
+}
