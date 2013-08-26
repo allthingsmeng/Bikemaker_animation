@@ -2,6 +2,30 @@
 @bedrm-color: #123456;
 @city-color: #ADADAA;
 
+.animations (@param) {
+  -webkit-animation: @param;
+  -moz-animation: @param;
+  -ms-animation: @param;
+  -o-animation: @param;
+  animation: @param;
+}
+
+.animation-delay (@param) {
+    -webkit-animation-delay: @param;
+    -moz-animation-delay: @param;
+    -ms-animation-delay: @param;
+    -o-animation-delay: @param;
+    animation-delay: @param;
+}
+
+.animation-state (@param) {
+     -webkit-animation-play-state:@param;
+     -moz-animation-play-state:@param;
+     -ms-animation-play-state:@param;
+     -o-animation-play-state:@param;
+     animation-play-state:@param;
+}
+
 * {
 margin: 0;
 padding: 0;    
@@ -57,11 +81,7 @@ div {
     background: transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;
     background-size: cover;
     margin: auto;
-    -webkit-animation-name: sleep;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: steps(2, end );
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
+    .animations(sleep 1s steps(2, end) infinite alternate);
 }
 
 .mike-walk {
@@ -73,44 +93,47 @@ div {
     bottom:0;
     left:-160px;
     z-index:100;
-/*    -webkit-animation-name: step;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: steps(4);
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: normal;*/
-    -webkit-animation:
-        step 1s steps(4) infinite, 
-        walk 15s linear infinite;
+    .animations(step 1s steps(4) infinite, walk 15s linear infinite;);
         
         &.two {
             z-index:0;
-            -webkit-animation:
-                step 1s steps(4) infinite, 
-                walk 7s linear infinite;
-            -webkit-animation-delay:3s;
+            .animations(step 1s steps(4) infinite, walk 7s linear infinite;);
+            .animation-delay(3s);
+
             &:hover {
-                -webkit-animation-play-state: paused;
+                .animation-state(paused);
             }
         }
 }
 
-@-webkit-keyframes step {
-    0% { 
-        background-position:0 0; 
-        }
-    100% { 
-        background-position:0 -972px; 
-        }
+@-webkit-keyframes step {.step-frames;}
+@-moz-keyframes step {.step-frames;}
+@-ms-keyframes step {.step-frames;}
+@-o-keyframes step {.step-frames;}
+@keyframes step {.step-frames;}
+
+@-webkit-keyframes walk {.walk-frames;}
+@-moz-keyframes walk {.walk-frames;}
+@-ms-keyframes walk {.walk-frames;}
+@-o-keyframes walk {.walk-frames;}
+@keyframes walk {.walk-frames;}
+
+@-webkit-keyframes sleep {.sleep-frames;}
+@-moz-keyframes sleep {.sleep-frames;}
+@-ms-keyframes sleep {.sleep-frames;}
+@-o-keyframes sleep {.sleep-frames;}
+@keyframes sleep {.sleep-frames;}
+
+
+.step-frames () {
+    0% { background-position:0 0; }
+    100% { background-position:0 -972px; }
 }
-@-webkit-keyframes walk {
-    0% { left:-160px;}
+.walk-frames () {
+    0% { left:-10%;}
     100% { left:105%; }
 }
-@-webkit-keyframes sleep {
-  0% { 
-       background-position:0 0px;
-        }
-   100% { 
-       background-position:0 -294px;
-        }
+.sleep-frames {
+  0% { background-position:0 0px; }
+   100% { background-position:0 -294px; }
 }
