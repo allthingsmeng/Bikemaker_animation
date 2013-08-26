@@ -1,0 +1,10 @@
+/*h1.upper {
+    text-transform: uppercase;
+    color: #DDD;
+}
+
+h1 span {
+    font-size: 18px;
+}*/
+body{background-color:#abcdef;font-family:Arial,"MS Trebuchet",sans-serif;font-size:100%}h1{font-size:32px;background-color:#fff}h1 span{font-size:10px}h1.upper{text-transform:uppercase;color:#DDD}div{background-color:#58AAFC}p{background-color:#D1172A}span{background-color:#F7E700}
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
