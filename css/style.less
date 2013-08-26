@@ -1,0 +1,76 @@
+@bg-color: #abcdef;
+@bedrm-color: #123456;
+@city-color: #ADADAA;
+
+@-webkit-keyframes sleep {
+   0% { 
+       background-position:0 0;
+       background-color: red;
+        }
+   100% { 
+       background-position:0 147px;
+       background-color:yellow;
+        }
+}
+
+* {
+margin: 0;
+padding: 0;    
+}
+
+body {
+background-color: @bg-color;
+font-family: Arial, "MS Trebuchet", sans-serif;
+font-size: 100%;
+}
+
+h2 {
+    em {
+        display: block;
+        font-style: normal;
+    }
+}
+
+div {
+    text-align: center;
+    
+    &.title {
+        .meng-logo {
+            height:30px;
+            width:30px;
+            background-color:#fff;
+            margin:10px auto 0 auto;
+/*          margin:top right bottom left;*/
+        }
+    }
+    
+    &.bedroom {
+        background-color: @bedrm-color;
+        padding-top: 20px;
+        color: white;
+            img {
+                &.mike-gif {
+                    max-width: 100px;
+                    margin: 30px 0;
+                }
+            }
+            .mike-ani {
+                height: 147px;
+                width: 100px;
+                background: transparent url('../img/mikesleep-sprite.png') no-repeat 0 0;
+                background-size: cover;
+                -webkit-animation-name: sleep;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-timing-function: step-start;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: reverse;
+/*                -webkit-animation: sleep 1s step-start infinite;*/
+            }
+    }
+    
+    &.city {
+        height: 200px;
+        background-color: @city-color;
+        padding: 20px;
+    }
+}
